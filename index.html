@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://www.pornhub.com/video/search?search=femboys">
-    <title>Goodbye!</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>My Website</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p>If your pc does not explode <a href="https://i.pinimg.com/736x/66/70/03/667003875e0f6bcad5321b8c1cbd625f.jpg">click here</a>.</p>
+
+  <div class="topnav">
+    <div class="site-name">My Website</div>
+    <div id="menuBtn" class="menu-icon" onclick="toggleMenu()">☰</div>
+  </div>
+
+  <!-- Dark Overlay -->
+  <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+  <!-- Slide Out Menu -->
+  <div id="sideMenu" class="side-menu">
+    <a href="#">🏠 Home</a>
+    <a href="#">🎮 Games</a>
+    <a href="#">ℹ️ About</a>
+    <a href="#">✉️ Contact</a>
+  </div>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("sideMenu").classList.toggle("open");
+    document.getElementById("overlay").classList.toggle("show");
+    document.getElementById("menuBtn").classList.toggle("open");
+  }
+</script>
+
 </body>
 </html>
