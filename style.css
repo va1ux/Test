@@ -1,56 +1,59 @@
-body {
+/* Reset */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #1b1b1b, #2a2a2a);
-  color: white;
-  padding-top: 80px;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Top Navigation Bar */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #111;  /* Roblox dark theme background */
+  color: #fff;
+}
+
+/* Top Navigation — Roblox Look */
 .topnav {
   width: 100%;
-  background: #111;
-  color: white;
-  padding: 15px 30px;
+  background: #181818; /* Roblox dark top bar */
+  padding: 12px 22px;  /* Roblox spacing */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 22px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #0d0d0d;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1500;
+  z-index: 1001;
 }
 
-.site-name {
-  font-weight: bold;
+.nav-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
 }
 
-/* Hamburger Menu Icon */
+/* Hamburger Button */
 .menu-icon {
-  width: 35px;
-  height: 28px;
-  margin-right: 10px;
-  position: relative;
-  cursor: pointer;
+  width: 28px;
+  height: 22px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 1600;
+  cursor: pointer;
+  z-index: 1002;
 }
 
 .menu-icon .bar {
   width: 100%;
-  height: 4px;
-  background: white;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  height: 3px;
+  background: #fff;
+  transition: 0.35s ease;
+  border-radius: 3px;
 }
 
-/* Animate into an X */
+/* Animating X */
 .menu-icon.open .bar:nth-child(1) {
-  transform: translateY(12px) rotate(45deg);
+  transform: translateY(9px) rotate(45deg);
 }
 
 .menu-icon.open .bar:nth-child(2) {
@@ -58,53 +61,65 @@ body {
 }
 
 .menu-icon.open .bar:nth-child(3) {
-  transform: translateY(-12px) rotate(-45deg);
+  transform: translateY(-9px) rotate(-45deg);
 }
 
-/* Slide Out Menu */
+/* Slide-out Menu Panel — Roblox style */
 .side-menu {
   position: fixed;
   top: 0;
-  right: -260px;
-  width: 250px;
+  right: -260px;  /* hidden off-screen */
+  width: 260px;
   height: 100%;
-  background: #222;
-  padding-top: 80px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  transition: right 0.3s ease;
-  z-index: 1550;
-  border-left: 1px solid #444;
-}
-
-.side-menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-  padding: 10px 20px;
-}
-
-.side-menu a:hover {
-  background: #333;
+  background: #1f1f1f;
+  padding-top: 70px;
+  transition: 0.35s ease;
+  box-shadow: -4px 0 10px rgba(0,0,0,0.4);
+  z-index: 1001;
 }
 
 .side-menu.open {
   right: 0;
 }
 
-/* Dark overlay */
+/* Menu Links */
+.side-menu ul {
+  list-style: none;
+}
+
+.side-menu ul li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+  font-size: 17px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.side-menu ul li a i {
+  width: 20px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.side-menu ul li a:hover {
+  background: #2c2c2c;
+}
+
+/* Dark Overlay */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  width: 100%;
+  background: rgba(0,0,0,0.55);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 1400;
+  transition: 0.3s ease;
+  z-index: 1000;
 }
 
 .overlay.show {
@@ -112,22 +127,10 @@ body {
   pointer-events: auto;
 }
 
-/* Main Content */
-.content {
-  text-align: center;
-  padding: 40px;
-  max-width: 800px;
-  margin: auto;
-}
-
-.content h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
-  text-shadow: 0 0 10px #000;
-}
-
-.content p {
-  font-size: 20px;
-  opacity: 0.9;
-  line-height: 1.6;
+/* Demo Page Content */
+.page-content {
+  margin-top: 80px;
+  padding: 20px;
+  font-size: 19px;
+  line-height: 1.5;
 }
