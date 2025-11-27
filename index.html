@@ -1,49 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Test Page</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roblox Style Navigation</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Top Navigation -->
-  <div class="topnav">
-    <div class="site-name">My Website</div>
+<!-- Overlay -->
+<div class="overlay"></div>
 
-    <!-- Animated Hamburger Icon -->
-    <div id="menuBtn" class="menu-icon" onclick="toggleMenu()">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
+<!-- Top Navigation -->
+<div class="topnav">
+    <div class="logo">My Website</div>
+
+    <!-- Hamburger Menu Icon -->
+    <div class="menu-icon" id="menuIcon">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
-  </div>
+</div>
 
-  <!-- Dark Overlay -->
-  <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+<!-- Slide-Out Menu -->
+<div class="side-menu" id="sideMenu">
+    <a href="#"><span class="icon">🏠</span> Home</a>
+    <a href="#"><span class="icon">🎮</span> Games</a>
+    <a href="#"><span class="icon">ℹ️</span> About</a>
+    <a href="#"><span class="icon">📩</span> Contact</a>
+</div>
 
-  <!-- Slide Out Menu -->
-  <div id="sideMenu" class="side-menu">
-    <a href="#">🏠 Home</a>
-    <a href="#">🎮 Games</a>
-    <a href="#">ℹ️ About</a>
-    <a href="#">✉️ Contact</a>
-  </div>
-
-  <!-- MAIN PAGE CONTENT -->
-  <div class="content">
+<!-- Page Content -->
+<div class="content">
     <h1>Welcome to the Test Page</h1>
-    <p>This is a simple page to test your animated navigation menu.</p>
-    <p>Click the menu icon in the top-right to see it slide in.</p>
-  </div>
+    <p>This page is here to test your fully animated Roblox-style menu.</p>
+    <p>Click the menu icon in the top-right to see it slide out.</p>
+</div>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById("sideMenu").classList.toggle("open");
-      document.getElementById("overlay").classList.toggle("show");
-      document.getElementById("menuBtn").classList.toggle("open");
-    }
-  </script>
+<script>
+const menuIcon = document.querySelector(".menu-icon");
+const sideMenu = document.querySelector(".side-menu");
+const overlay = document.querySelector(".overlay");
+
+menuIcon.addEventListener("click", () => {
+    menuIcon.classList.toggle("open");
+    sideMenu.classList.toggle("open");
+    overlay.classList.toggle("show");
+});
+
+overlay.addEventListener("click", () => {
+    menuIcon.classList.remove("open");
+    sideMenu.classList.remove("open");
+    overlay.classList.remove("show");
+});
+</script>
 
 </body>
 </html>
