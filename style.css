@@ -1,8 +1,9 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #111;
+  background: linear-gradient(135deg, #1b1b1b, #2a2a2a);
   color: white;
+  padding-top: 80px;
 }
 
 /* Top Navigation Bar */
@@ -87,12 +88,11 @@ body {
   background: #333;
 }
 
-/* Active open state */
 .side-menu.open {
   right: 0;
 }
 
-/* Dark background overlay */
+/* Dark overlay */
 .overlay {
   position: fixed;
   top: 0;
@@ -111,7 +111,22 @@ body {
   pointer-events: auto;
 }
 
-/* Add padding so content isn't under navbar */
-body {
-  padding-top: 70px;
+/* Main Content */
+.content {
+  text-align: center;
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.content h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #000;
+}
+
+.content p {
+  font-size: 20px;
+  opacity: 0.9;
+  line-height: 1.6;
 }
